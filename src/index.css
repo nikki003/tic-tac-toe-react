@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+    margin: 100px;
+}
+
+.square {
+    background: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 0%;
+}

@@ -1,13 +1,27 @@
 import { React, Component } from 'react';
 import ReactDom from 'react-dom';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './index.css';
 
 
 class Square extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: null
+        }
+    }
     render() {
         return (
-            <button className="square">Square</button>
+            <Button 
+            variant="outline-secondary"
+            className="square" 
+            onClick={ () => {this.setState({value: 'X'})} }
+            >
+                {this.state.value}
+            </Button>
         )
     };
 
@@ -15,7 +29,7 @@ class Square extends Component {
 
 class Board extends Component {
     renderSquare(i) {
-        return <Square />
+        return <Square value={i}/>
     }
 
     render() {
